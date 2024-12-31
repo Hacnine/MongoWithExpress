@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const DB_OPTIONS = {
-  user:'admin2',
-  pass:'123',
-  dbName:'schooldb2',
-  authSource:'schooldb2',
+  // user:'admin2',
+  // pass:'123',
+  dbName:'schooldb',
+  // authSource:'schooldb2',
 };
 
 const connectDB = (DATABASE_URL) => {
