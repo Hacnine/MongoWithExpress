@@ -54,13 +54,13 @@ const getAllDoc = async () => {
   // res.json(students);
   students.forEach((student) => {
     console.log(
-      student.name,
-      student.age,
-      student.fees.toString(),
-      student.hobbies[0],
-      student.hobbies[1],
-      student.comments[0].value,
-      student.join
+      // student.name,
+      // student.age,
+      // student.fees.toString(),
+      // student.hobbies[0],
+      // student.hobbies[1],
+      // student.comments[0].value,
+      // student.join
     );
   });
   try {
@@ -69,4 +69,14 @@ const getAllDoc = async () => {
   }
 };
 
-export { studentModel, teacherModel, createDynamicDoc, getAllDoc };
+const getSpecificFieldDoc = async () => {
+  // const students = await studentModel.find().select('-name -age');
+  // const students = await studentModel.findById('6770edbe22e37f99cab8cedd');
+  const students = await studentModel.find({age: 25}).select('name age');
+
+
+  console.log(students)
+
+}
+
+export { studentModel, teacherModel, createDynamicDoc, getAllDoc, getSpecificFieldDoc  };
