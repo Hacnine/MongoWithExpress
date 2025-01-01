@@ -79,4 +79,10 @@ const getSpecificFieldDoc = async () => {
 
 }
 
-export { studentModel, teacherModel, createDynamicDoc, getAllDoc, getSpecificFieldDoc  };
+const updateDoc = async (id) => {
+  const result = await studentModel.findByIdAndUpdate(id, {name: 'Ahmand'}, {returnDocument: 'before'});
+  // const result = await studentModel.findById('6770edbe22e37f99cab8cedd');  
+  console.log(result)  
+}
+
+export { studentModel, teacherModel, createDynamicDoc, getAllDoc, getSpecificFieldDoc,updateDoc  };
