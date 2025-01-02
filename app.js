@@ -10,6 +10,8 @@ const app = express();
 const port = process.env.PORT || "3001";
 const DATABASE_URL = process.env.DATABASE_URL || "mongodb://localhost:27017/schooldb2";
 
+app.use(cookieParser());
+app.use('/', web);
 connectDB(DATABASE_URL); 
 
 // Create and save doc
@@ -17,7 +19,7 @@ connectDB(DATABASE_URL);
 
 // getAllDoc();
 // getSpecificFieldDoc(); 
-updateDoc('6770edbe22e37f99cab8cedd');
+// updateDoc('6770edbe22e37f99cab8cedd');
 // app.set("view engine", "ejs");
 // // app.use('/about', myLogger)
 // app.use("/", web);
